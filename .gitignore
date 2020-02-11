@@ -1,4 +1,5 @@
 # Directories
+/.settings/
 /.gradle/
 /build/
 /eclipse
@@ -40,6 +41,7 @@ LICENSE-fml.txt
 CREDITS-fml.txt
 Essentials_Client.launch
 Essentials_Server.launch
+gradle.properties
 
 usercache.json
 Essentials_Client NonLogin.launch

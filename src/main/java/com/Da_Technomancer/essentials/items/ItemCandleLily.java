@@ -1,9 +1,11 @@
 package com.Da_Technomancer.essentials.items;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.blocks.EssentialsBlocks;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -29,7 +31,7 @@ public class ItemCandleLily extends ItemLilyPad{
 		super(EssentialsBlocks.candleLilyPad);
 		String name = "candle_lilypad";
 		setRegistryName(name);
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
 		EssentialsItems.toRegister.add(this);
 		EssentialsItems.itemAddQue(this);
@@ -38,7 +40,7 @@ public class ItemCandleLily extends ItemLilyPad{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Decorative, and light emitting");
+		tooltip.add(I18n.format("item." + Essentials.MODID + ".candle_lilypad.tooltip"));
 	}
 
 	@Override

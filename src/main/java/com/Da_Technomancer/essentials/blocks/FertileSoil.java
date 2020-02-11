@@ -1,11 +1,13 @@
 package com.Da_Technomancer.essentials.blocks;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.EssentialsConfig;
 import com.Da_Technomancer.essentials.items.EssentialsItems;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -30,7 +32,7 @@ public class FertileSoil extends Block{
 	protected FertileSoil(){
 		super(Material.GROUND);
 		String name = "fertile_soil";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setHardness(.5F);
 		setSoundType(SoundType.GROUND);
@@ -48,7 +50,7 @@ public class FertileSoil extends Block{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Slowly creates the seed plant/sapling on top of it, for free");
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".fertile_soil.tooltip"));
 	}
 
 	@Override

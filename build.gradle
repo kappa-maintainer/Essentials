@@ -36,6 +36,7 @@ repositories {
 
 dependencies {
 	deobfCompile "mezz.jei:jei_1.12.2:4.8.5.159"
+	compile files('libs/crossroads-1.12.2-1.12.2.jar')
 }
 
 processResources {

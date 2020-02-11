@@ -1,11 +1,13 @@
 package com.Da_Technomancer.essentials.blocks;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.items.EssentialsItems;
 import com.Da_Technomancer.essentials.tileentities.BrazierTileEntity;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -39,7 +41,7 @@ public class Brazier extends BlockContainer{
 	protected Brazier(){
 		super(Material.ROCK);
 		String name = "brazier";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setHardness(2);
 		setRegistryName(name);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
@@ -186,7 +188,7 @@ public class Brazier extends BlockContainer{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Able to hold water, lava, glowstone, coal blocks, and salt blocks");
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".brazier.tooltip"));
 	}
 
 

@@ -1,5 +1,6 @@
 package com.Da_Technomancer.essentials.items;
 
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -14,13 +15,16 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+
+import com.Da_Technomancer.essentials.Essentials;
+
 import java.util.List;
 
 public class ObsidianCuttingKit extends Item{
 
 	protected ObsidianCuttingKit(){
 		String name = "obsidian_cutting_kit";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
 		EssentialsItems.toRegister.add(this);
@@ -30,7 +34,7 @@ public class ObsidianCuttingKit extends Item{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Insta-breaks obsidian on right click, but uses the tool");
+		tooltip.add(I18n.format("item." + Essentials.MODID + ".obsidian_cutting_kit.tooltip"));
 	}
 
 	@Override

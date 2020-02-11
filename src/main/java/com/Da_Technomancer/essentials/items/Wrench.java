@@ -1,5 +1,6 @@
 package com.Da_Technomancer.essentials.items;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.EssentialsConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -11,7 +12,7 @@ public class Wrench extends Item{
 
 	protected Wrench(){
 		String name = "wrench";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		if(EssentialsConfig.getConfigBool(EssentialsConfig.addWrench, false)){
 			setCreativeTab(EssentialsItems.TAB_ESSENTIALS);

@@ -9,6 +9,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,7 +30,7 @@ public class ItemChutePort extends BlockContainer{
 	public ItemChutePort(){
 		super(Material.IRON);
 		String name = "item_chute_port";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setHardness(2);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
@@ -86,8 +87,8 @@ public class ItemChutePort extends BlockContainer{
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
 		if(Essentials.hasCrossroads && EssentialsConfig.getConfigBool(EssentialsConfig.itemChuteRotary, true)){
-			tooltip.add("I: 2");
-			tooltip.add("Consumes: 0.5J/operation");
+			tooltip.add(I18n.format("tile." + Essentials.MODID + ".item_chute_port.tooltip.0"));
+			tooltip.add(I18n.format("tile." + Essentials.MODID + ".item_chute_port.tooltip.1"));
 		}
 	}
 

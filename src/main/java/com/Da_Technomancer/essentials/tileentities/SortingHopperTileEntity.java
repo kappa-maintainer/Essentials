@@ -30,6 +30,9 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
 import javax.annotation.Nullable;
+
+import com.Da_Technomancer.essentials.Essentials;
+
 import java.util.List;
 
 public class SortingHopperTileEntity extends TileEntityLockable implements ITickable{
@@ -46,7 +49,7 @@ public class SortingHopperTileEntity extends TileEntityLockable implements ITick
 
 	@Override
 	public String getName(){
-		return "container.sorting_hopper";
+		return "container." + Essentials.MODID + ".sorting_hopper";
 	}
 
 	@Override

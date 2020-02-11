@@ -8,6 +8,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
@@ -30,7 +31,7 @@ public class SlottedChest extends BlockContainer{
 		super(Material.WOOD);
 		String name = "slotted_chest";
 		setSoundType(SoundType.WOOD);
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setHardness(2);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
@@ -66,7 +67,7 @@ public class SlottedChest extends BlockContainer{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Slots can be locked to only accept one item type");
-		tooltip.add("The partitions make it bigger somehow");
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".slotted_chest.tooltip.0"));
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".slotted_chest.tooltip.1"));
 	}
 }

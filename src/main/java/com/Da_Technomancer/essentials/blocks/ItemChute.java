@@ -1,10 +1,12 @@
 package com.Da_Technomancer.essentials.blocks;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.items.EssentialsItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -25,7 +27,7 @@ public class ItemChute extends Block{
 	public ItemChute(){
 		super(Material.IRON);
 		String name = "item_chute";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
 		setHardness(1.5F);
@@ -42,7 +44,7 @@ public class ItemChute extends Block{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Safe for decoration");
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".item_chute.tooltip"));
 	}
 
 	@Override

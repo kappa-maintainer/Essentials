@@ -1,5 +1,6 @@
 package com.Da_Technomancer.essentials.tileentities;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.gui.container.SlottedChestContainer;
 import com.Da_Technomancer.essentials.packets.EssentialsPackets;
 import com.Da_Technomancer.essentials.packets.SendSlotFilterToClient;
@@ -178,7 +179,7 @@ public class SlottedChestTileEntity extends TileEntity{
 
 		@Override
 		public String getName(){
-			return "container.slotted_chest";
+			return "container." + Essentials.MODID + ".slotted_chest";
 		}
 
 		@Override

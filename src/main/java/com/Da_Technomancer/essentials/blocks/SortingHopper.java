@@ -1,5 +1,6 @@
 package com.Da_Technomancer.essentials.blocks;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.items.EssentialsItems;
 import com.Da_Technomancer.essentials.tileentities.SortingHopperTileEntity;
 import net.minecraft.block.Block;
@@ -11,6 +12,7 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -44,7 +46,7 @@ public class SortingHopper extends BlockContainer{
 	protected SortingHopper(){
 		super(Material.IRON);
 		String name = "sorting_hopper";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setHardness(2);
 		setSoundType(SoundType.METAL);
@@ -194,7 +196,7 @@ public class SortingHopper extends BlockContainer{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Prioritizes insertion over extraction, making it ideal for sorting");
-		tooltip.add("Exactly the same, aside from all the differences");
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".sorting_hopper.tooltip.0"));
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".sorting_hopper.tooltip.1"));
 	}
 }

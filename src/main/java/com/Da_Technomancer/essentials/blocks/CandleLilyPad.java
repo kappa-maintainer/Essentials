@@ -1,5 +1,6 @@
 package com.Da_Technomancer.essentials.blocks;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.items.EssentialsItems;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.SoundType;
@@ -17,7 +18,7 @@ public class CandleLilyPad extends BlockLilyPad{
 	protected CandleLilyPad(){
 		String name = "candle_lilypad";
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setSoundType(SoundType.PLANT);
 		EssentialsBlocks.toRegister.add(this);

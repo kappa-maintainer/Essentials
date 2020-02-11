@@ -1,5 +1,6 @@
 package com.Da_Technomancer.essentials.blocks;
 
+import com.Da_Technomancer.essentials.Essentials;
 import com.Da_Technomancer.essentials.EssentialsConfig;
 import com.Da_Technomancer.essentials.items.EssentialsItems;
 import com.Da_Technomancer.essentials.tileentities.PortExtenderTileEntity;
@@ -8,6 +9,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,7 +31,7 @@ public class PortExtender extends BlockContainer{
 	protected PortExtender(){
 		super(Material.IRON);
 		String name = "port_extender";
-		setUnlocalizedName(name);
+		setUnlocalizedName(Essentials.MODID + "." + name);
 		setRegistryName(name);
 		setHardness(2F);
 		setCreativeTab(EssentialsItems.TAB_ESSENTIALS);
@@ -46,7 +48,7 @@ public class PortExtender extends BlockContainer{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced){
-		tooltip.add("Lets item insertion connections stretch another block");
+		tooltip.add(I18n.format("tile." + Essentials.MODID + ".port_extender.tooltip"));
 	}
 
 	@Override
